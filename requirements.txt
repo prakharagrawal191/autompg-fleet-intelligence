@@ -1,0 +1,10 @@
+# Auto MPG Fleet Intelligence - Streamlit Community Cloud runtime
+# Pinned to versions verified locally (Python 3.12, Streamlit 1.65).
+pandas==2.3.3
+numpy==2.5.3
+scikit-learn==1.9.0
+scipy==1.18.1
+streamlit==1.65.0
+plotly==7.1.0
+matplotlib==3.11.1
+

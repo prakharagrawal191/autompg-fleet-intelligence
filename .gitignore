@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Streamlit / local runs
+.streamlit/secrets.toml
+
+# Project work that must not deploy
+.ipynb_checkpoints/
+*.ipynb
+*.pdf
+_shots/
+*.log
+dom.json
+final_out.txt
+Index
+*.before_redesign.py
+
+# Local QA images
+qa_*.png
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/

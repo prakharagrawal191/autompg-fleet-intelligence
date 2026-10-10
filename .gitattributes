@@ -1,0 +1,6 @@
+# Keep data files byte-identical (avoid CRLF conversion breaking parsers)
+auto-mpg.data -text
+auto-mpg.data-original -text
+auto-mpg.names -text
+*.csv -text
+*.ipynb -text

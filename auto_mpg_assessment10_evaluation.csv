@@ -1,0 +1,4 @@
+Method,K,Silhouette Score,Davies-Bouldin Index
+K-Means,3,0.3818549446876644,0.9834632893342036
+Hierarchical Ward,3,0.37097928055135443,0.8993362838975151
+"Dendrogram cut (Ward, fcluster) - validation",3,0.37097928055135443,0.8993362838975151
