@@ -18,6 +18,17 @@ streamlit run app.py
 No code edits are needed: load the dataset from the **Dataset** page
 (upload `.csv` / `.data` / `.txt`, or use the project `auto-mpg.data`).
 
+## Deploy (Streamlit Community Cloud)
+
+1. Fork / use this repo (`main` branch, `app.py` at the root — already set up).
+2. Open [share.streamlit.io](https://share.streamlit.io) → **Deploy an app**
+   → **From existing repo** → select this repo, branch `main`, main file `app.py`.
+3. Click **Deploy**. The app builds from `requirements.txt` (Python 3.12 pinned
+   via `.python-version`) with no manual steps.
+
+The app also runs in **Demo Mode** (sidebar) with no upload required, so the
+deployed instance works immediately out of the box.
+
 ## Features
 
 - Dataset upload (UCI raw `?` horsepower supported) + inspection
