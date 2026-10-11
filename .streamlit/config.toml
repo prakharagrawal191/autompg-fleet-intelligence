@@ -7,10 +7,33 @@ maxUploadSize = 50
 [browser]
 gatherUsageStats = false
 
+# Tokens mirror src/theme.py. Status colours map onto Streamlit's semantic
+# colours so st.success/st.warning/st.error/st.info and st.badge stay on-palette.
 [theme]
 base = "dark"
 primaryColor = "#D4A72C"
 backgroundColor = "#0F172A"
 secondaryBackgroundColor = "#16233B"
 textColor = "#F8FAFC"
-font = "sans serif"
+borderColor = "#334155"
+linkColor = "#5EC4B6"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, sans-serif"
+baseRadius = "0.5rem"
+buttonRadius = "0.5rem"
+showSidebarBorder = true
+redColor = "#E0483C"
+redTextColor = "#F07B71"
+orangeColor = "#D9A520"
+yellowColor = "#D9A520"
+greenColor = "#3FB950"
+blueColor = "#2A9D8F"
+blueTextColor = "#5EC4B6"
+grayColor = "#94A3B8"
+codeBackgroundColor = "#1E2D45"
+dataframeBorderColor = "#334155"
+dataframeHeaderBackgroundColor = "#1E2D45"
+chartCategoricalColors = ["#3987E5", "#D95926", "#199E70", "#C98500", "#D55181", "#9085E9"]
+
+[theme.sidebar]
+backgroundColor = "#111C30"
+secondaryBackgroundColor = "#16233B"

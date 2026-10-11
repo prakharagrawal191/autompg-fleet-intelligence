@@ -26,22 +26,49 @@ No code edits are needed: load the dataset from the **Dataset** page
 3. Click **Deploy**. The app builds from `requirements.txt` (Python 3.12 pinned
    via `.python-version`) with no manual steps.
 
-The app also runs in **Demo Mode** (sidebar) with no upload required, so the
-deployed instance works immediately out of the box.
+The deployed instance works out of the box: **Dataset → Use Project Dataset**
+loads the bundled `auto-mpg.data`. **Demo Mode** (sidebar) adds a guided
+nine-step walkthrough; it never runs or changes any computation.
 
 ## Features
 
-- Dataset upload (UCI raw `?` horsepower supported) + inspection
-- Preprocessing: cylinder-group median imputation, Z-score standardization
-- EDA: distributions, correlation heatmap, pairwise explorer
-- K selection: Elbow + Silhouette for K = 2..6 (animated)
-- Clustering: K-Means (random_state / n_init adjustable) + Ward hierarchical
-- Ward dendrogram with cut indicator + `fcluster` assignments
-- Evaluation: Silhouette (higher better) / Davies-Bouldin (lower better)
-- PCA 2D explorer (visualization only), animated method transitions
-- Fleet archetypes: inverse-transformed centroids, data-driven names,
-  representative vehicles, vehicle lookup, engineering inference
-- Results & Export: 8 CSV downloads generated from live state
+- Dataset import (UCI whitespace `.data` with `?` horsepower, or CSV) with
+  structured validation: what failed, why it matters, and the next step
+- Preprocessing: cylinder-group median imputation (affected rows shown),
+  Z-score standardization with before/after statistics
+- EDA workspace: distributions with live statistics, correlation heatmap,
+  relationship explorer with an optional least-squares trendline
+- Clustering Lab: K-Means (validated random_state=42, n_init=10; adjustable for
+  sensitivity checks, flagged when non-default) and Ward hierarchical, K = 2–6,
+  elbow + silhouette with a computed "why this K" reading, full-linkage Ward
+  dendrogram whose cut line matches the `fcluster(maxclust)` assignments
+- Cluster Quality: silhouette (higher better) / Davies–Bouldin (lower better),
+  computed leaders, no composite score
+- PCA explorer (visualization only) with projected centroids and loadings
+- Fleet archetypes from inverse-transformed centroids, representative vehicles,
+  vehicle lookup with standardized distances to every centroid
+- Engineering insights, methodology traceability, 8 CSV exports from live state
+- Presentation Mode (projector layout) and optional viva explanations
+
+## Project structure
+
+| Path | Role |
+| ---- | ---- |
+| `app.py` | Shell: navigation, status bar, modes, page routing |
+| `src/auto_mpg_utils.py` | Validated science (unchanged by the UI) |
+| `src/state.py` | Session state, dataset validation, central invalidation, pipeline actions |
+| `src/views/*.py` | One module per page |
+| `src/ui_components.py`, `src/chart_factory.py`, `src/theme.py` | Design system: components, Plotly theme, tokens and the validated cluster palette |
+
+## Tests
+
+```bash
+python run_tests.py
+```
+
+Runs the science audit (reference values), the UI walkthrough, spot checks,
+interaction scenarios and the redesign regression suite (state invalidation,
+validation, dendrogram/PCA geometry, every page in every state).
 
 ## Assignment Mapping
 

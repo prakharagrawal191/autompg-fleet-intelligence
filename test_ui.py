@@ -104,7 +104,7 @@ nav("Vehicle Lookup")
 sel = [s for s in at.selectbox if s.label == "Vehicle"]
 check("Lookup selectbox present", len(sel) == 1)
 if sel:
-    sel[0].set_value(sel[0].options[-1]); at.run()
+    sel[0].select_index(len(sel[0].options) - 1); at.run()  # options are row positions (names repeat)
     check("Lookup selection works", not at.exception, str(at.exception)[:300])
 
 nav("EDA Explorer")
